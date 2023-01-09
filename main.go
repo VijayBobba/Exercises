@@ -16,6 +16,9 @@ func numIslands() int {
 		{1, 1, 0, 0, 0},
 		{0, 0, 0, 0, 0},
 	}
+	//In the Go language, you are allowed to assign a function to a variable. When
+	//you assign a function to a variable, then the type of the variable is of
+	//function type, and you can call that variable like a function call
 	var dfs func(r, c int) bool
 	dfs = func(r, c int) bool {
 		if grid[r][c] != '1' {
