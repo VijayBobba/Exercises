@@ -9,22 +9,32 @@ func main() {
 	//medianInArray()
 }
 
-func numIslands() int {
+func numIslands() {
+	//Case 1
+	//grid := [][]byte{
+	//	{1, 1, 1, 1, 0},
+	//	{1, 1, 0, 1, 0},
+	//	{1, 1, 0, 0, 0},
+	//	{0, 0, 0, 0, 0},
+	//}
+
+	//Case 2
 	grid := [][]byte{
-		{1, 1, 1, 1, 0},
-		{1, 1, 0, 1, 0},
 		{1, 1, 0, 0, 0},
-		{0, 0, 0, 0, 0},
+		{1, 1, 0, 0, 0},
+		{0, 0, 1, 0, 0},
+		{0, 0, 0, 1, 1},
 	}
+
 	//In the Go language, you are allowed to assign a function to a variable. When
 	//you assign a function to a variable, then the type of the variable is of
 	//function type, and you can call that variable like a function call
 	var dfs func(r, c int) bool
 	dfs = func(r, c int) bool {
-		if grid[r][c] != '1' {
+		if grid[r][c] != 1 {
 			return false
 		}
-		grid[r][c] = '2'
+		grid[r][c] = 2
 		if r-1 >= 0 {
 			dfs(r-1, c)
 		}
@@ -47,7 +57,7 @@ func numIslands() int {
 			}
 		}
 	}
-	return n
+	fmt.Println(n)
 }
 
 //a=[1, 1, 2] 2 is lonely. length is always odd, and it is guaranteed there is
