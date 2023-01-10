@@ -51,7 +51,8 @@ func numIslands() {
 		if grid[r][c] != 1 { // graph search starts with 1 in pos
 			return false // return to root or recursive calls in the process of graph search
 		}
-		grid[r][c] = 2
+		grid[r][c] = 2 //required to block already searched nodes when searching within graph traversal or from root
+		//graph search below
 		if r-1 >= 0 { //see that you are not in water (out of bounds)
 			dfs(r-1, c)
 		}
