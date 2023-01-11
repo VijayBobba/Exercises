@@ -6,7 +6,7 @@ func main() {
 	fmt.Println("Hello, World!")
 	numIslands()
 	//lonelyInteger() //TODO:
-	//medianInArray()
+	medianInArray()
 }
 
 func numIslands() {
@@ -115,4 +115,23 @@ func medianInArray() {
 	}
 	fmt.Println(arr)
 	fmt.Println(arr[(l-1)/2])
+}
+
+//Input: nums = [2,7,11,15], target = 9
+//Output: [0,1]
+//Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+//Another test case: [3,2,3]: expected [0,2]
+func twoSum(nums []int, target int) []int {
+	// Space: O(n)
+	aNum := make(map[int]int) //much better: make(map[int]int,len(nums))
+	// Time: O(n)
+	for idx, num := range nums {
+		// Time: O(1)
+		if pos, ok := aNum[target-num]; ok {
+			return []int{pos, idx}
+		} else {
+			aNum[num] = idx
+		}
+	}
+	return []int{}
 }
