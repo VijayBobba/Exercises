@@ -15,6 +15,10 @@ func main() {
 	l1 := problems.ListNode{2, &problems.ListNode{4, &problems.ListNode{3, nil}}}
 	l2 := problems.ListNode{5, &problems.ListNode{6, &problems.ListNode{4, nil}}}
 	problems.AddTwoNumbers(&l1, &l2)
+
+	//IsPalindrome
+	head := problems.ListNode{2, &problems.ListNode{4, &problems.ListNode{3, nil}}}
+	problems.IsPalindrome(&head)
 }
 
 func numIslands() {

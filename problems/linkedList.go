@@ -1,6 +1,9 @@
 package problems
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 // ListNode Definition for singly-linked list.
 type ListNode struct {
@@ -29,4 +32,23 @@ func AddTwoNumbers(l1 *ListNode, l2 *ListNode) {
 		tmp = tmp.Next // this step will make tmp move to nil eventually, not variable result
 	}
 	fmt.Println(result)
+}
+
+func IsPalindrome(head *ListNode) bool {
+	hv := []int{}
+	hvt := []int{}
+	tmp := head
+	for i := 0; tmp != nil; i++ {
+		hv = append(hv, tmp.Val)
+		hvt = append(hvt, tmp.Val) // array or slice is pass by value (you change one -swap here; other changes)
+		tmp = tmp.Next
+	}
+	//swap array
+	for i, j := 0, len(hv)-1; i < j; i, j = i+1, j-1 {
+		hv[i], hv[j] = hv[j], hv[i]
+	}
+	if reflect.DeepEqual(hv, hvt) {
+		return true
+	}
+	return false
 }
