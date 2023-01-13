@@ -1,4 +1,4 @@
-package main
+package problems
 
 type Logger struct {
 	cache map[string]int
