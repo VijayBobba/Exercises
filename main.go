@@ -17,8 +17,11 @@ func main() {
 	problems.AddTwoNumbers(&l1, &l2)
 
 	//IsPalindrome
-	head := problems.ListNode{2, &problems.ListNode{4, &problems.ListNode{3, nil}}}
+	head := problems.ListNode{2, &problems.ListNode{2, &problems.ListNode{3, nil}}}
 	problems.IsPalindrome(&head)
+	//DeleteDuplicates
+	problems.DeleteDuplicates(&head)
+
 }
 
 func numIslands() {

@@ -40,7 +40,7 @@ func IsPalindrome(head *ListNode) bool {
 	tmp := head
 	for i := 0; tmp != nil; i++ {
 		hv = append(hv, tmp.Val)
-		hvt = append(hvt, tmp.Val) // array or slice is pass by value (you change one -swap here; other changes)
+		hvt = append(hvt, tmp.Val) // array or slice is pass by reference (you change one -swap here; other changes)
 		tmp = tmp.Next
 	}
 	//swap array
@@ -51,4 +51,17 @@ func IsPalindrome(head *ListNode) bool {
 		return true
 	}
 	return false
+}
+
+func DeleteDuplicates(head *ListNode) *ListNode {
+	result := head
+	for head != nil {
+		for head.Next != nil && head.Val == head.Next.Val {
+			head.Next = head.Next.Next //this will modify result for pass by reference
+			// cause .Next this is memory location
+		}
+		head = head.Next //this will change head only not result cause this is pass by value
+		// not dealing with a pointer here.
+	}
+	return result
 }
