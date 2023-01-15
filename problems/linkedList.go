@@ -65,3 +65,32 @@ func DeleteDuplicates(head *ListNode) *ListNode {
 	}
 	return result
 }
+
+func MergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
+	result := &ListNode{}
+	tmp := result
+	if list1 == nil && list2 == nil {
+		return nil
+	} else if (list1 != nil && list2 != nil) && (list1.Val == 0 && list2.Val == 0) {
+		return &ListNode{0, &ListNode{0, nil}}
+	} else if (list1 != nil && list1.Val == 0) || (list2 != nil && list2.Val == 0) {
+		return &ListNode{0, nil}
+	}
+	for list1 != nil || list2 != nil {
+		if list1 != nil {
+			tmp.Val = list1.Val
+			list1 = list1.Next
+		}
+		if list2 != nil {
+			tmp.Next = &ListNode{}
+			tmp = tmp.Next
+			tmp.Val = list2.Val
+			list2 = list2.Next
+		}
+		if list1 != nil || list2 != nil {
+			tmp.Next = &ListNode{}
+			tmp = tmp.Next
+		}
+	}
+	return result
+}
