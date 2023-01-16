@@ -43,8 +43,28 @@ func IsPalindrome(head *ListNode) bool {
 		hvt = append(hvt, tmp.Val) // array or slice is pass by reference (you change one -swap here; other changes)
 		tmp = tmp.Next
 	}
+
 	//swap array
+
+	//Multi variables in for https://go.dev/play/p/XinosFU2RqW
+	/*
+		package main
+
+		import (
+			"fmt"
+		)
+
+		func main() {
+			for i, j := 0, 5; i < j; i, j = i+1, j-1 {
+				fmt.Println(j)
+				fmt.Println("Hello, playground")
+			}
+		}
+	*/
 	for i, j := 0, len(hv)-1; i < j; i, j = i+1, j-1 {
+		//As Golang supports initializing multiple variables at the same time so here in
+		//this line we are initializing number1 with number2 and number2 with number1
+		fmt.Println(j)
 		hv[i], hv[j] = hv[j], hv[i]
 	}
 	if reflect.DeepEqual(hv, hvt) {
