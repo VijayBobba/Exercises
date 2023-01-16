@@ -66,6 +66,8 @@ func DeleteDuplicates(head *ListNode) *ListNode {
 	return result
 }
 
+// MergeTwoLists boootifully written with recursion, if you do not know this
+// concept how will you write/implement it. So keep swinging your sword ¯\_(ツ)_/¯
 func MergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	if list1 == nil && list2 == nil {
 		return nil
