@@ -23,8 +23,9 @@ func main() {
 	//IsPalindrome
 	head := problems.ListNode{2, &problems.ListNode{2, &problems.ListNode{3, nil}}}
 	problems.IsPalindrome(&head)
-
 	problems.DeleteDuplicates(&head)
+	problems.AnSCaller()
+
 }
 
 func numIslands() {
