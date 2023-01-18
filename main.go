@@ -25,7 +25,8 @@ func main() {
 	problems.IsPalindrome(&head)
 	problems.DeleteDuplicates(&head)
 	problems.AnSCaller()
-
+	problems.DpCaller()
+	problems.GnTCaller()
 }
 
 func numIslands() {
