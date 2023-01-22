@@ -6,9 +6,12 @@ import (
 )
 
 func AnSCaller() {
+	s := "S-Dde2"
+	k := 2
+	licenseKeyFormatting(s, k)
 	//s := "abcabcbb"
 	//s := "aab"
-	s := "abcbbcad"
+	s = "abcbbcad"
 	lengthOfLongestSubstring(s)
 	lengthOfLongestSubstringWithStringMap(s)
 }
